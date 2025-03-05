@@ -19,11 +19,17 @@ cd hello_rust_gtk4
 
 ```
 
-## Run the compiler and start up the GTK4 Hello World app
+## Development Run the compiler and start up the GTK4 Hello World app
 ```
 ./run.sh
 ```
 
+## Compile Linux
+```
+cargo build --release
+```
+
+## Compile Windows64 
 ```bash
 docker run --name hello_gtk  -it --rm  -v "$(pwd)":"/root/"   myridia/fedora_cross_compile /bin/bash
 cd /root/
