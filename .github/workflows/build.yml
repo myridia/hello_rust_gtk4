@@ -24,7 +24,7 @@ jobs:
         run: |
          sudo apt-get install curl build-essential gcc make mingw-w64 -y
          sudo apt-get install rustc cargo gzip -y
-         sudo apt-get install g++ zlib1g-dev libmpc-dev libmpfr-dev libgmp-dev libglib2.0-dev  
+         sudo apt-get install g++ zlib1g-dev libmpc-dev libmpfr-dev libgmp-dev libglib2.0-dev librust-gdk-pixbuf-sys-dev
          
       - name: Checkout repository
         uses: actions/checkout@v4
