@@ -4,6 +4,7 @@ Cross Compile Example with Rust and Gtk4
 ## Requirements - Debian as example
 ```
 sudo apt-get install libssl-dev pkg-config curl
+sudo apt-get install gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 wine64
 ```
 
 ## Rust Requirements 
