@@ -4,6 +4,7 @@ Cross Compile Example with Rust and Gtk4
 ## Requirements - Debian as example
 ```
 sudo apt-get install libssl-dev pkg-config curl
+sudo apt-get install gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 wine64
 ```
 
 ## Rust Requirements 
@@ -31,7 +32,14 @@ cargo build --release
 
 ## Compile Windows64 
 ```bash
-docker run --name hello_gtk  -it --rm  -v "$(pwd)":"/root/"   myridia/fedora_cross_compile /bin/bash
-cd /root/
-x86_64-w64-mingw32-gcc -o hello_64 hello.c `mingw64-pkg-config --cflags gtk+-3.0 --libs gtk+-3.0` -mwindows
+docker run --name hello_gtk  -it --rm  -v "$(pwd)":"/root/src"   myridia/fedora_cross_compile /bin/bash
+./win64.sh
 ```
+
+## Compile Windows32 
+```bash
+docker run --name hello_gtk  -it --rm  -v "$(pwd)":"/root/src"   myridia/fedora_cross_compile /bin/bash
+./win32.sh
+```
+
+
