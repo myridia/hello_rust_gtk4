@@ -24,8 +24,8 @@ jobs:
         run: |
          sudo apt-get install curl build-essential gcc make mingw-w64 -y
          sudo apt-get install rustc cargo gzip -y
-         sudo apt-get install g++ zlib1g-dev libmpc-dev libmpfr-dev  libgmp-dev
-         
+         sudo apt-get install -y librust-gdk4-sys-dev  
+         sudo apt-get install -y g++ zlib1g-dev libmpc-dev libmpfr-dev libgmp-dev libglib2.0-dev librust-gdk-pixbuf-sys-dev librust-pango-sys-dev      
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -47,7 +47,7 @@ jobs:
 
       - name: rename binaries 
         run: |
-          cp target/x86_64-unknown-linux-gnu/release/hello_rust target/x86_64-unknown-linux-gnu/release/hello_rust_gtk4_linux
+          cp target/x86_64-unknown-linux-gnu/release/hello_rust_gtk4 target/x86_64-unknown-linux-gnu/release/hello_rust_gtk4_linux
 
       - name: Upload Linux Binary to release
         uses: svenstaro/upload-release-action@v2
